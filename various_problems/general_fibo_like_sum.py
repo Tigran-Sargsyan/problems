@@ -1,5 +1,5 @@
 """
-given two numbers 'a' and 'b' calculates the sum of the sequence descripted below.
+given two numbers 'a' and 'b' calculates the sum of the sequence described below.
 [a, b, a+b, b+a+b, a+b+b+a+b, ...]
 
 a1 = a
