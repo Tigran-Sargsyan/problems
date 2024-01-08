@@ -2,7 +2,7 @@ def fibo(n):
     if n == 1 or n == 2:  
         return 1  
     else:  
-        return (fibo(n - 1) + fibo(n - 2))   
+        return (fibo(n - 2) + fibo(n - 1))   
 
 def formula(a, b, n):
     return a + (fibo(n) - 1) * a + (fibo(n + 1) - 1) * b 
