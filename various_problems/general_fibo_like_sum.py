@@ -1,3 +1,13 @@
+"""
+given two numbers 'a' and 'b' calculates the sum of the sequence descripted below.
+[a, b, a+b, b+a+b, a+b+b+a+b, ...]
+
+a1 = a
+a2 = b
+....
+an = a(n-1) + a(n-2)
+"""
+
 def fibo(n):   
     if n == 1 or n == 2:  
         return 1  
