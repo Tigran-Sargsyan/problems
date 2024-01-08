@@ -8,27 +8,33 @@ a2 = b
 an = a(n-1) + a(n-2)
 """
 
-def fibo(n):   
-    if n == 1 or n == 2:  
-        return 1  
-    else:  
-        return (fibo(n - 2) + fibo(n - 1))   
+def intuitive_formula(a, b, n):
+    return a + (fibo_general(1, 1, n) - 1) * a + (fibo_general(1, 1, n + 1) - 1) * b 
 
-def formula(a, b, n):
-    return a + (fibo(n) - 1) * a + (fibo(n + 1) - 1) * b 
-
-def iterative(a, b, n):
+def iterative_solution(a, b, n):
     seq_sum = a + b
     for i in range(n - 2):
         a, b = b, a + b
         seq_sum += b
         
     return seq_sum
+
+def fibo_general(a, b, n):
+    if n == 1:
+        return a
+    elif n == 2:
+        return b
+    else:
+        return fibo_general(a, b, n - 2) + fibo_general(a, b, n - 1)
+
+def fibo_general_sum(a, b, n):
+    return fibo_general(a, b, n + 2) - b
     
 a = 4
 b = 7
 
 for n in range(2, 20):
-    print("formula: ", formula(a, b, n))
-    print("iterative: ", iterative(a, b, n))
+    print("intuitive formula: ", intuitive_formula(a, b, n))
+    print("fibo general sum formula: ", fibo_general_sum(a, b, n))
+    print("iterative solution: ", iterative_solution(a, b, n))
     print("-------------")
